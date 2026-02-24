@@ -59,6 +59,12 @@ export default function ResultsPage() {
 
   const count = responses.length;
 
+  async function resetResults() {
+    if (!window.confirm("Delete all responses? This cannot be undone.")) return;
+    await supabase.from("responses").delete().gte("id", 0);
+    setResponses([]);
+  }
+
   function getRatingData(qId: string) {
     const q = questions.find((q) => q.id === qId)!;
     const vals = responses.map((r) => (r as unknown as Record<string, unknown>)[qId] as number).filter((v) => v != null);
@@ -119,6 +125,7 @@ export default function ResultsPage() {
         <div style={styles.headerRight}>
           <span style={styles.liveDot} />
           <span style={styles.responsesBadge}>{count} response{count !== 1 ? "s" : ""}</span>
+          <button onClick={resetResults} style={styles.resetBtn}>Reset</button>
         </div>
       </div>
 
@@ -428,5 +435,16 @@ const styles: Record<string, React.CSSProperties> = {
   },
   emptyIcon: {
     opacity: 0.5,
+  },
+
+  resetBtn: {
+    marginLeft: "1vw",
+    padding: "0.3vh 0.8vw",
+    background: "transparent",
+    border: "1px solid rgba(255,255,255,0.3)",
+    borderRadius: "0.3vw",
+    color: "rgba(255,255,255,0.6)",
+    fontSize: "0.75vw",
+    cursor: "pointer",
   },
 };
