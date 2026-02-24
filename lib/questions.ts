@@ -43,7 +43,7 @@ export const questions: Question[] = [
       "Vibe Coding (Lovable)",
       "Research Tools (Perplexity)",
       "Image Manipulation (Nano Banana)",
-      "I can't decide - my mind is blown",
+      "I can't decide - it's all mind-blowing",
     ],
   },
   {
