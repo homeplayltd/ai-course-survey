@@ -236,11 +236,11 @@ export default function ResultsPage() {
             {/* QR Codes */}
             <div style={{ ...styles.card, gridColumn: "4 / 5", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "space-evenly" }}>
               <div style={styles.qrItem}>
-                <Image src="/qr-wispr-flow.png" alt="Wispr Flow QR" width={120} height={120} style={{ width: "100%", height: "auto" }} />
+                <Image src="/qr-wispr-flow.png" alt="Wispr Flow QR" width={120} height={120} style={{ width: "100%", height: "auto", filter: "grayscale(1) sepia(1) hue-rotate(20deg) saturate(0.3) brightness(0.6)" }} />
                 <div style={styles.qrLabel}>Wispr Flow</div>
               </div>
               <div style={styles.qrItem}>
-                <Image src="/qr-lovable.png" alt="Lovable QR" width={120} height={120} style={{ width: "100%", height: "auto" }} />
+                <Image src="/qr-lovable.png" alt="Lovable QR" width={120} height={120} style={{ width: "100%", height: "auto", filter: "grayscale(1) sepia(1) hue-rotate(20deg) saturate(0.3) brightness(0.6)" }} />
                 <div style={styles.qrLabel}>Lovable</div>
               </div>
             </div>
