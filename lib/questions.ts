@@ -39,12 +39,11 @@ export const questions: Question[] = [
     type: "multi",
     text: "Which topics did you find most useful?",
     options: [
-      "AI image generation for mood boards",
-      "AI-assisted space planning",
-      "Client presentation tools",
-      "Material and colour sourcing with AI",
-      "AI for project management",
-      "Prompt engineering techniques",
+      "AI dictation tools (Wispr Flow)",
+      "Vibe Coding (Lovable)",
+      "Research Tools (Perplexity)",
+      "Image Manipulation (Nano Banana)",
+      "I can't decide - my mind is blown",
     ],
   },
   {
