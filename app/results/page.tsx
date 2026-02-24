@@ -177,9 +177,7 @@ export default function ResultsPage() {
                   <div style={styles.barsContainer}>
                     {q.options!.map((opt) => (
                       <div style={styles.barRow} key={opt}>
-                        <span style={styles.barLabelWide} title={opt}>
-                          {opt.length > 30 ? opt.substring(0, 30) + "..." : opt}
-                        </span>
+                        <span style={styles.barLabelWide}>{opt}</span>
                         <div style={styles.barTrack}>
                           <div style={{ ...styles.barFill, width: `${(counts[opt] / maxC) * 100}%` }} />
                         </div>
@@ -375,15 +373,12 @@ const styles: Record<string, React.CSSProperties> = {
     flexShrink: 0,
   },
   barLabelWide: {
-    width: "8vw",
+    width: "16vw",
     textAlign: "left" as const,
     fontSize: "0.7vw",
     color: "#828073",
     fontWeight: 500,
     flexShrink: 0,
-    overflow: "hidden",
-    textOverflow: "ellipsis",
-    whiteSpace: "nowrap" as const,
   },
   barTrack: {
     flex: 1,
