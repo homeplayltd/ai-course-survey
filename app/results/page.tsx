@@ -224,7 +224,7 @@ export default function ResultsPage() {
                     {texts.length === 0 ? (
                       <span style={{ color: "var(--sage)", fontSize: "0.8vw" }}>No written feedback yet</span>
                     ) : (
-                      texts.slice(-6).map((t, i) => (
+                      texts.map((t, i) => (
                         <div style={styles.textItem} key={i}>{t}</div>
                       ))
                     )}
@@ -416,7 +416,7 @@ const styles: Record<string, React.CSSProperties> = {
   /* Text feedback */
   textFeedback: {
     flex: 1,
-    overflow: "hidden",
+    overflowY: "auto",
     display: "flex",
     flexDirection: "column",
     gap: "0.6vh",
@@ -427,9 +427,7 @@ const styles: Record<string, React.CSSProperties> = {
     lineHeight: 1.4,
     padding: "0.6vh 0",
     borderBottom: "1px solid #F2E0D6",
-    overflow: "hidden",
-    textOverflow: "ellipsis",
-    whiteSpace: "nowrap" as const,
+    flexShrink: 0,
   },
 
   /* Empty state */
